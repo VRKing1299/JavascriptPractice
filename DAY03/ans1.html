@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="sc(event)">
+        <input type="number" id="a">
+        <input type="submit">
+    </form>
+
+    <h2 id="sq"></h2>
+    <h2 id="cb"></h2>
+    <script>
+        let sq = document.getElementById("sq");
+        let cb = document.getElementById("cb");
+        function sc(event) {
+            event.preventDefault();
+
+            console.log("function called")
+            let form = event.target;
+            let a = form.elements[0].value;
+            sq.innerHTML = "Square: " + (a * a);
+            cb.innerHTML = "Cube: " + (a * a * a);
+        }
+    </script>
+</body>
+
+</html>

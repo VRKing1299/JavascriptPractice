@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="calc(event)">
+        <input type="number" id="a" name="divisor" placeholder="Enter the divisor">
+        <input type="number" id="b" name="divident" placeholder="Enter the divident">
+        <input type="submit">
+    </form>
+
+    <h3 id="quotient"></h3>
+    <h3 id="remainder"></h3>
+    <script>
+        function calc(event) {
+            event.preventDefault();
+            let form = event.target;
+            let d = form.elements["divisor"].value;
+            let a = form.elements["divident"].value;
+
+            document.getElementById("quotient").innerHTML = "Quotient : " + (a / d);
+            document.getElementById("remainder").innerHTML = "Remainder : " + (a % d);
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="calc(event)">
+        <label for="radius"> enter the radius of circle</label>
+        <input type="number" id="radius" name=" radius"><br>
+        <label for="base">Enter the base and height of triangle</label>
+        <input type="number" id="base" name=" base">
+        <input type="number" id="height" name=" height"><br>
+        <input type="submit">
+    </form>
+
+    <h2 id="circle"></h2>
+    <h2 id="triangle"></h2>
+
+    <script>
+        function calc(event) {
+            event.preventDefault();
+            let form = event.target;
+            let radius = form.elements["radius"].value;
+            let base = form.elements["base"].value;
+            let height = form.elements["height"].value;
+
+            let area = Math.PI * radius * radius;
+            let volume = (base * height) / 3;
+
+            document.getElementById("circle").innerHTML = "Area of circle: " + area;
+            document.getElementById("triangle").innerHTML = "Area of triangle: " + volume;
+
+        }
+    </script>
+</body>
+
+</html>
